@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 import uet.oop.bomberman.BombermanGame;
 import uet.oop.bomberman.Path.BFS;
 import uet.oop.bomberman.graphics.Sprite;
+import uet.oop.bomberman.sound.Sound;
 
 import java.util.Random;
 
@@ -20,6 +21,7 @@ public class CoinOrange extends EntityCanDead {
         if (dead) {
             if (timing == 0) {
                 img = Sprite.coinOrange_dead.getFxImage();
+                Sound.play("AA126_11");
             }
             timing++;
         }
@@ -76,6 +78,7 @@ public class CoinOrange extends EntityCanDead {
             return;
         }
         if (x % 32 == 0 && y % 32 == 0) {
+            goDoor();
             directionToGo =  BFS.bfs(x / Sprite.SCALED_SIZE, y / Sprite.SCALED_SIZE,
                     BombermanGame.player1.getX() / Sprite.SCALED_SIZE,
                     BombermanGame.player1.getY() / Sprite.SCALED_SIZE).charAt(0);

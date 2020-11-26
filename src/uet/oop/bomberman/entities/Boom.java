@@ -3,6 +3,7 @@ package uet.oop.bomberman.entities;
 import javafx.scene.image.Image;
 import uet.oop.bomberman.BombermanGame;
 import uet.oop.bomberman.graphics.Sprite;
+import uet.oop.bomberman.sound.Sound;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,6 @@ public class Boom extends Entity {
         super(x, y, img);
     }
     private int timing;
-    private static int lengthOfBoom = 2;
 
 
     public int getTiming() {
@@ -23,24 +23,20 @@ public class Boom extends Entity {
         this.timing = timing;
     }
 
-    public static int getLengthOfBoom() {
-        return lengthOfBoom;
-    }
-
-    public static void setLengthOfBoom(int lengthOfBoom) {
-        lengthOfBoom = lengthOfBoom;
-    }
-
 
     @Override
     public void update() {
         timing++;
+        if (timing == 1) {
+            Sound.play("BOM_SET");
+        }
         if (timing >= 130) {
             img = Sprite.bomb_exploded2.getFxImage();
         } else if (timing >= 125) {
             img = Sprite.bomb_exploded1.getFxImage();
         } else if (timing >= 120) {
             img = Sprite.bomb_exploded.getFxImage();
+            Sound.play("BOM_11_M");
         } else if (timing % 30 == 0) {
             img = Sprite.bomb.getFxImage();
         } else if (timing % 30 == 10) {

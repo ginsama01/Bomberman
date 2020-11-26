@@ -4,6 +4,7 @@ import javafx.scene.image.Image;
 import uet.oop.bomberman.BombermanGame;
 import uet.oop.bomberman.Path.BFS;
 import uet.oop.bomberman.graphics.Sprite;
+import uet.oop.bomberman.sound.Sound;
 
 import java.util.Random;
 
@@ -15,11 +16,13 @@ public class CoinRed extends EntityCanDead {
     private char directionToGo = ' ';
     private int speed = 1;
 
+
     @Override
     public void whenDead() {
         if (dead) {
             if (timing == 0) {
                 img = Sprite.coinRed_dead.getFxImage();
+                Sound.play("AA126_11");
             }
             timing++;
         }
@@ -76,6 +79,7 @@ public class CoinRed extends EntityCanDead {
             return;
         }
         if (x % 32 == 0 && y % 32 == 0) {
+            goDoor();
             char[] a = new char[4];
             int dem = -1;
             int X = x / Sprite.SCALED_SIZE;
