@@ -36,7 +36,7 @@ public class Boom extends Entity {
             img = Sprite.bomb_exploded1.getFxImage();
         } else if (timing >= 120) {
             img = Sprite.bomb_exploded.getFxImage();
-            Sound.play("BOM_11_M");
+            if (timing == 120) Sound.play("BOM_11_M");
         } else if (timing % 30 == 0) {
             img = Sprite.bomb.getFxImage();
         } else if (timing % 30 == 10) {

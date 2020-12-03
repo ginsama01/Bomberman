@@ -25,11 +25,11 @@ public class Sprite {
 	| Board sprites
 	|--------------------------------------------------------------------------
 	 */
-	public static Sprite grass = new Sprite(DEFAULT_SIZE, 6, 0, SpriteSheet.tiles, 16, 16);
-	public static Sprite brick = new Sprite(DEFAULT_SIZE, 7, 0, SpriteSheet.tiles, 16, 16);
-	public static Sprite wall = new Sprite(DEFAULT_SIZE, 5, 0, SpriteSheet.tiles, 16, 16);
-	public static Sprite portal = new Sprite(DEFAULT_SIZE, 4, 0, SpriteSheet.tiles, 14, 14);
-	
+	public static Sprite grass = new Sprite(Sprite.DEFAULT_SIZE, 8, 4, SpriteSheet1.tiles, 16, 16);
+	public static Sprite brick = new Sprite(Sprite.DEFAULT_SIZE, 9, 9, SpriteSheet1.tiles, 16, 16);
+	public static Sprite wall = new Sprite(Sprite.DEFAULT_SIZE, 3, 13, SpriteSheet1.tiles, 16, 16);
+	public static Sprite portal = new Sprite(Sprite.DEFAULT_SIZE, 8, 7, SpriteSheet1.tiles, 14, 14);
+	public static Sprite portal_open = new Sprite(Sprite.DEFAULT_SIZE, 9, 7, SpriteSheet1.tiles, 14, 14);
 	/*
 	|--------------------------------------------------------------------------
 	| Bomber Sprites
@@ -217,6 +217,7 @@ public class Sprite {
 	public static Sprite powerup_detonator = new Sprite(DEFAULT_SIZE, 4, 10, SpriteSheet.tiles, 16, 16);
 	public static Sprite powerup_bombpass = new Sprite(DEFAULT_SIZE, 5, 10, SpriteSheet.tiles, 16, 16);
 	public static Sprite powerup_flamepass = new Sprite(DEFAULT_SIZE, 6, 10, SpriteSheet.tiles, 16, 16);
+	public static Sprite powerup_random = new Sprite(DEFAULT_SIZE, 7, 10, SpriteSheet.tiles, 16, 16);
 
 	/*
 	|-------------------------------------------------------------------------
