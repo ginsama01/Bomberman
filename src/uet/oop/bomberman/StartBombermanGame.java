@@ -20,6 +20,8 @@ import java.io.InputStream;
 
 public class StartBombermanGame extends Application {
 
+    public static int type;
+
     public static void main(String[] args) {
         Application.launch(args);
     }
@@ -55,6 +57,7 @@ public class StartBombermanGame extends Application {
         playButton.setMinWidth(150);
         playButton.setPrefWidth(150);
         playButton.setOnAction(event -> {
+            type = 1;
             startMusic.stop();
             BombermanGame newGame = new BombermanGame();
             try {
@@ -69,6 +72,16 @@ public class StartBombermanGame extends Application {
         doublePlay.setMaxWidth(150);
         doublePlay.setMinWidth(150);
         doublePlay.setPrefWidth(150);
+        doublePlay.setOnAction(event -> {
+            type = 2;
+            startMusic.stop();
+            MultiplayerBombermanGame newGame = new MultiplayerBombermanGame();
+            try {
+                newGame.start(primaryStage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         //Sound button
         Button soundButton = new Button();
